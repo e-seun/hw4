@@ -2,18 +2,22 @@
 
 <h1>Places</h1>
 
-<ul>
+<p>
+  <a href="/places/new" class="btn btn-primary">New place</a>
+</p>
+
+<ul class="list-group list-group-flush">
   <% for place in @places %>
-    <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+  <a href="/places/<%= place["id"] %>" class="list-group-item list-group-item-action"><%= place["name"] %></a>
   <% end %>
 </ul>
+<p></p>
 
-<p>
-  <a href="/places/new">New place</a>
-</p>
 
 <% else %>
 
- Please <a href="/login">login</a>.
+<div class="alert alert-primary" role="alert">
+  Please <a href="/login" class="alert-link">login</a> to continue.
+</div>
 
 <% end %>
